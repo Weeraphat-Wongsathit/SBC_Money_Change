@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Add fragment to activity
-        if (savedInstanceState ==null)
+        if (savedInstanceState == null)
         {
             getSupportFragmentManager().
-                    beginTransaction().add(R.id.collapseActionView, new MainFragment()).commit();
+                    beginTransaction().add(R.id.contentmainfragment, new MainFragment()).commit();
         }
 
     }//Main Mettod
