@@ -86,6 +86,7 @@ public class CalculateFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
+
             }
         });
         builder.show();
