@@ -13,18 +13,19 @@
 
     <!--Content-->
     <LinearLayout
-        android:padding="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="#b4ffffff"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:padding="18dp">
 
 
         <!--Money-->
-        <LinearLayout android:orientation="horizontal"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <!--Icon-->
             <ImageView
@@ -34,20 +35,21 @@
 
             <!--TextField    -->
             <EditText
-                android:hint="USD"
-                android:inputType="number"
+                android:id="@+id/edtMoney"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:layout_height="wrap_content"
+                android:hint="USD"
+                android:inputType="number" />
 
 
         </LinearLayout>
 
         <!--Calculate-->
         <Button
-            android:text="Calculate"
+            android:id="@+id/btncalculat"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Calculate" />
 
     </LinearLayout>
 
