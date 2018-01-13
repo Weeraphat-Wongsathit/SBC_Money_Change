@@ -15,23 +15,30 @@ import weeraphat.sbc.ac.th.sbc_moneychange.R;
  */
 
 public class MainFragment extends Fragment {
+
+    private double aDouble = 33.11;
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         //Calculate Controller
+        calculateController();
+
+    }//Main Metthod
+
+    private void calculateController() {
         Button button = getView().findViewById(R.id.btncalculat);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Replace Fragment
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentmainfragment, new CalculateFragment())
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentmainfragment,CalculateFragment.calculateInstance(aDouble))
                         .addToBackStack(null)
                         .commit();
             }
         });
-
-    }//Main Metthod
+    }
 
     @Nullable
     @Override

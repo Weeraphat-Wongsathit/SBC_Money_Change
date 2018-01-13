@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,32 @@ import weeraphat.sbc.ac.th.sbc_moneychange.R;
 
 public class CalculateFragment extends Fragment {
 
+    private double aDouble;
+
+    public static CalculateFragment calculateInstance(double factorDoble) {
+        CalculateFragment calculateFragment = new CalculateFragment();
+        Bundle bundle = new Bundle();
+        bundle.putDouble("Factor", factorDoble);
+        calculateFragment.setArguments(bundle);
+
+        return calculateFragment;
+    }
+
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 //        Toolbar contronler
+        toolbarContronler();
+
+        //Get Value From Argument
+        aDouble = getArguments().getDouble("Factor");
+        Log.d("13Jan", "Factor ==>" + aDouble);
+
+
+    }//Main Metthod
+
+    private void toolbarContronler() {
         Toolbar toolbar = getView().findViewById(R.id.toolbarcalculate);
         ((MainActivity) getActivity()).setSupportActionBar((toolbar));
 
@@ -37,8 +60,7 @@ public class CalculateFragment extends Fragment {
 
             }
         });
-
-    }//Main Metthod
+    }
 
     @Nullable
     @Override
