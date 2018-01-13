@@ -3,17 +3,42 @@ package weeraphat.sbc.ac.th.sbc_moneychange.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import weeraphat.sbc.ac.th.sbc_moneychange.MainActivity;
 import weeraphat.sbc.ac.th.sbc_moneychange.R;
 
 /**
  * Created by LAB3201_00 on 13/1/2561.
  */
 
-public class CalculateFragment extends Fragment{
+public class CalculateFragment extends Fragment {
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+//        Toolbar contronler
+        Toolbar toolbar = getView().findViewById(R.id.toolbarcalculate);
+        ((MainActivity) getActivity()).setSupportActionBar((toolbar));
+
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.th_exchange));
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.th_sub_exchange));
+
+        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().popBackStack();
+
+            }
+        });
+
+    }//Main Metthod
 
     @Nullable
     @Override

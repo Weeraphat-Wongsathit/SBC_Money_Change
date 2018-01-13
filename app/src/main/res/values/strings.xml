@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">SBC_Money Change</string>
+    <string name="app_name">SBC_Change</string>
+    <string name="th_exchange">แลกเปลี่ยนเงิน</string>
+    <string name="th_sub_exchange">ดอร์ล่าเป็นงินบาท</string>
 </resources>
